@@ -1433,7 +1433,7 @@ class Connection {
             sslheader = `tls ${this.tls.cipher.standardName || this.tls.cipher.name}`;
         }
 
-        let received_header = `from ${this.hello.host} (${this.get_remote('info')})\r
+        let received_header = `from ${this.local.host}(${this.local.info})\r
 \tby ${this.local.host} (${this.local.info}) with ${smtp} id ${this.transaction.uuid}\r
 \tenvelope-from ${this.transaction.mail_from.format()}`;
 
